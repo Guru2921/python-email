@@ -45,7 +45,7 @@ def main():
     smpt_port = environ.get('SMPT_PORT')
     s = smtplib.SMTP(host=smpt_host, port=smpt_port)
     s.starttls()
-    s.login("ef3560f5d1ea43", "58bd920894f1f4")
+    s.login(environ.get('SMPT_USERNAME'), environ.get('SMPT_PASSWORD'))
 
     # For each contact, send the email:
     for name, email in zip(names, emails):
